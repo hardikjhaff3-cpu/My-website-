@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I'm Sorry</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#ffd6e8, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      background: white;
+      width: 320px;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .character {
+      font-size: 80px;
+      animation: pop 1.5s ease;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); }
+      60% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    h2 {
+      color: #ff4d88;
+      margin: 10px 0;
+    }
+
+    p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #ff4d88;
+      color: white;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e63b75;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="character">🐰</div>
+    <h2>I'm Really Sorry</h2>
+    <p>
+      Mujhse galti ho gayi.<br>
+      Mera intention kabhi bhi bura nahi tha.<br>
+      Please mujhe maaf kar do 🙏
+    </p>
+    <button onclick="nextMessage()">Next</button>
+  </div>
+
+  <script>
+    const messages = [
+      "Tumhari dosti mere liye important hai 🌸",
+      "Main aage se zyada dhyaan rakhunga 🙂",
+      "Bas ek choti si smile chahiye 😊",
+      "Thank you for reading 💛"
+    ];
+
+    let index = 0;
+
+    function nextMessage() {
+      if (index < messages.length) {
+        document.querySelector("p").innerHTML = messages[index];
+        index++;
+      } else {
+        document.querySelector("p").innerHTML = "🌼 Have a nice day 🌼";
+      }
+    }
+  </script>
+
+</body>
+</html>
